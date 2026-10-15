@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolás Dómina | Administrador de Consorcios</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        blue: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                            950: '#172554',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-blue-200 selection:text-blue-900">
+
+<!-- STREAMING_CHUNK:Generando navegación... -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">
+                        ND
+                    </div>
+                    <span class="font-bold text-xl text-slate-900 tracking-tight">Nicolás Dómina</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#perfil" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Perfil</a>
+                    <a href="#caracteristicas" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Características</a>
+                    <a href="#servicios" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Servicios</a>
+                    <a href="#contacto" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Contactar
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-blue-600 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+                <a href="#perfil" class="mobile-link block px-3 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-600 rounded-md font-medium">Perfil</a>
+                <a href="#caracteristicas" class="mobile-link block px-3 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-600 rounded-md font-medium">Características</a>
+                <a href="#servicios" class="mobile-link block px-3 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-600 rounded-md font-medium">Servicios</a>
+                <a href="#contacto" class="mobile-link block px-3 py-3 mt-4 text-center bg-blue-600 text-white rounded-md font-medium shadow-sm">Contactar</a>
+            </div>
+        </div>
+    </nav>
+
+<!-- STREAMING_CHUNK:Generando sección hero... -->
+    <section id="inicio" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-hero-pattern overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <!-- Decorative blob -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-400/20 blur-3xl mix-blend-overlay"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-300/20 blur-3xl mix-blend-overlay"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-500/20 text-blue-100 font-semibold text-sm mb-6 border border-blue-400/30 backdrop-blur-sm reveal">
+                Administración Profesional de Consorcios
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6 reveal" style="transition-delay: 100ms;">
+                Gestión transparente para <br class="hidden md:block" />
+                <span class="text-blue-200">la tranquilidad de su edificio</span>
+            </h1>
+            <p class="mt-4 max-w-2xl text-lg md:text-xl text-blue-100 mx-auto font-light mb-10 reveal" style="transition-delay: 200ms;">
+                Liderazgo proactivo, cuentas claras y mantenimiento preventivo. Confíe su patrimonio en manos de un profesional certificado.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" style="transition-delay: 300ms;">
+                <a href="#contacto" class="bg-white text-blue-700 hover:bg-blue-50 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                    Solicitar Presupuesto <i class="fa-solid fa-arrow-right text-sm"></i>
+                </a>
+                <a href="#caracteristicas" class="bg-blue-700/50 hover:bg-blue-700/70 text-white border border-blue-400/30 px-8 py-4 rounded-full font-bold text-lg transition-all backdrop-blur-sm flex items-center justify-center gap-2">
+                    Conocer Más
+                </a>
+            </div>
+        </div>
+        
+        <!-- Wave shape divider -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" class="w-full h-auto text-white fill-current" preserveAspectRatio="none">
+                <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+            </svg>
+        </div>
+    </section>
+
+<!-- STREAMING_CHUNK:Generando sección perfil... -->
+    <section id="perfil" class="py-20 lg:py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <!-- Image Column -->
+                <div class="lg:w-5/12 relative reveal">
+                    <!-- Decorative elements behind image -->
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                    
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="https://placehold.co/600x750/1e40af/ffffff?text=Foto+Nicol%C3%A1s+D%C3%B3mina" alt="Nicolás Dómina" class="w-full h-auto object-cover object-center" />
+                        
+                        <!-- Badge overlay -->
+                        <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-slate-100 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-900 leading-tight">Liderazgo y Disciplina</p>
+                                <p class="text-sm text-slate-500 font-medium">Trayectoria comprobable</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Column -->
+                <div class="lg:w-7/12 reveal" style="transition-delay: 200ms;">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold mb-4 border border-blue-100">
+                        <i class="fa-regular fa-user"></i> Sobre mí
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Del rigor militar a la eficiencia en su edificio</h2>
+                    <div class="w-20 h-1.5 bg-blue-600 rounded-full mb-8"></div>
+                    
+                    <div class="space-y-6 text-lg text-slate-600">
+                        <p>
+                            Mi nombre es Nicolás Dómina. A lo largo de mi carrera en el Ejército, tuve el honor de desempeñarme como <strong class="text-slate-800">inspector y líder de grupos de trabajo</strong>, posiciones que forjaron en mí un carácter resolutivo y un compromiso inquebrantable con la excelencia.
+                        </p>
+                        <p>
+                            Hoy, traslado todas esas ventajas competitivas a la administración de consorcios. La disciplina militar me permite aplicar una <strong class="text-slate-800">metodología de trabajo rigurosa y transparente</strong>. Entiendo que la anticipación y el control preventivo son claves para evitar gastos innecesarios y urgencias edilicias.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 grid sm:grid-cols-2 gap-6">
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 flex gap-4 items-start">
+                            <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-clipboard-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1">Inspección Detallada</h4>
+                                <p class="text-sm text-slate-600">Capacidad analítica para detectar fallas antes de que se conviertan en problemas graves.</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 flex gap-4 items-start">
+                            <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-users-gear"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1">Liderazgo de Equipos</h4>
+                                <p class="text-sm text-slate-600">Gestión firme pero empática del personal de mantenimiento y maestranza del edificio.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- STREAMING_CHUNK:Generando sección características... -->
+    <section id="caracteristicas" class="py-20 lg:py-32 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">¿Por qué elegir a Nicolás Dómina?</h2>
+                <div class="w-20 h-1.5 bg-blue-600 mx-auto rounded-full mb-6"></div>
+                <p class="text-lg text-slate-600">
+                    Combinamos conocimientos técnicos actualizados con una vocación de servicio genuina para asegurar que su consorcio funcione de manera impecable.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 items-stretch">
+                <!-- Card 1: Experiencia -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow reveal relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-6 relative z-10">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3 relative z-10">Experiencia Reciente y Activa</h3>
+                    <p class="text-slate-600 leading-relaxed relative z-10">
+                        Sólida trayectoria en la gestión diaria de consorcios. Resolviendo desde emergencias edilicias hasta la optimización de los recursos financieros del edificio. Implementación de tecnología para liquidación de expensas y comunicación fluida con los copropietarios, garantizando respuestas rápidas y efectivas.
+                    </p>
+                </div>
+
+                <!-- Card 2: Licencia -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow reveal relative overflow-hidden group" style="transition-delay: 150ms;">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-6 relative z-10">
+                        <i class="fa-solid fa-stamp"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3 relative z-10">Licencia Oficial de CABA</h3>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-4 relative z-10">
+                        <i class="fa-solid fa-check-circle"></i> Matrícula Activa
+                    </div>
+                    <p class="text-slate-600 leading-relaxed relative z-10">
+                        Profesional inscripto en el Registro Público de Administradores de Consorcios de la Ciudad Autónoma de Buenos Aires. Cumplimiento estricto de todas las normativas legales, contables y laborales vigentes exigidas por el Gobierno de la Ciudad (Ley 941).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- STREAMING_CHUNK:Generando sección servicios... -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2 reveal">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">Gestión Integral para su Edificio</h2>
+                    <p class="text-lg text-slate-600 mb-8">
+                        Nuestro enfoque abarca todas las áreas críticas de la administración para asegurar la valorización de su propiedad y la convivencia armónica.
+                    </p>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-xs">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Administración Contable</h4>
+                                <p class="text-slate-600 text-sm mt-1">Liquidación clara de expensas, pago a proveedores y presentación de balances.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-xs">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Mantenimiento Preventivo</h4>
+                                <p class="text-slate-600 text-sm mt-1">Planificación de reparaciones y control de instalaciones (ascensores, calderas, matafuegos).</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-xs">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Gestión de Personal</h4>
+                                <p class="text-slate-600 text-sm mt-1">Liquidación de sueldos (FATERYH), ART, y seguimiento del personal del edificio.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="md:w-1/2 reveal" style="transition-delay: 200ms;">
+                    <!-- Decorative image placeholder matching the blue aesthetic -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <div class="absolute inset-0 bg-blue-900/20 mix-blend-multiply"></div>
+                        <img src="https://placehold.co/800x600/1e3a8a/ffffff?text=Edificios+Modernos+CABA" alt="Edificios modernos CABA" class="w-full h-auto object-cover rounded-2xl" />
+                        <!-- Floating badge -->
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur rounded-xl p-4 shadow-lg border border-slate-100 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500 font-medium">Compromiso con</p>
+                                <p class="font-bold text-slate-900">Atención Personalizada</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- STREAMING_CHUNK:Generando sección contacto y footer... -->
+    <section id="contacto" class="py-20 lg:py-32 bg-blue-50 relative overflow-hidden">
+        <!-- Background accents -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-200/50 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-300/30 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+                <div class="grid lg:grid-cols-5">
+                    
+                    <!-- Contact Info Sidebar -->
+                    <div class="lg:col-span-2 bg-blue-600 text-white p-10 lg:p-12 flex flex-col justify-between">
+                        <div>
+                            <h2 class="text-3xl font-bold mb-2">Hablemos</h2>
+                            <p class="text-blue-100 mb-10">¿Busca mejorar la administración de su consorcio? Contácteme para coordinar una reunión sin compromiso.</p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-blue-500/50 rounded-full flex items-center justify-center text-xl shrink-0">
+                                        <i class="fa-regular fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-blue-200 mb-1">Correo Electrónico</p>
+                                        <a href="mailto:contacto@nicolasdomina.com.ar" class="text-lg font-semibold hover:text-blue-200 transition-colors break-all">
+                                            contacto@nicolasdomina.com.ar
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-blue-500/50 rounded-full flex items-center justify-center text-xl shrink-0">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-blue-200 mb-1">Área de Cobertura</p>
+                                        <p class="text-lg font-semibold">CABA (Ciudad Autónoma de Buenos Aires)</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-blue-500/50 rounded-full flex items-center justify-center text-xl shrink-0">
+                                        <i class="fa-solid fa-id-card"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-blue-200 mb-1">Registro</p>
+                                        <p class="text-lg font-semibold">Administrador Inscripto Ley 941</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Direct Action Button -->
+                        <div class="mt-12">
+                            <button onclick="copyEmail()" id="copyBtn" class="w-full bg-white text-blue-700 hover:bg-blue-50 font-bold py-3 px-4 rounded-xl transition-colors flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-copy"></i> Copiar Correo
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-3 p-10 lg:p-12">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-6">Envíe su consulta</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Nombre completo</label>
+                                    <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all bg-slate-50 focus:bg-white" placeholder="Ej. Juan Pérez">
+                                </div>
+                                <div>
+                                    <label for="edificio" class="block text-sm font-medium text-slate-700 mb-2">Barrio / Dirección del Consorcio</label>
+                                    <input type="text" id="edificio" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all bg-slate-50 focus:bg-white" placeholder="Ej. Caballito / Av. Rivadavia...">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Correo electrónico</label>
+                                <input type="email" id="email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all bg-slate-50 focus:bg-white" placeholder="su@email.com">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Mensaje</label>
+                                <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all bg-slate-50 focus:bg-white resize-none" placeholder="¿En qué puedo ayudarlo?"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-xl transition-colors shadow-md hover:shadow-lg flex justify-center items-center gap-2">
+                                Enviar Mensaje <i class="fa-regular fa-paper-plane"></i>
+                            </button>
+                            
+                            <div id="formSuccess" class="hidden mt-4 p-4 bg-green-50 text-green-700 rounded-xl border border-green-200 flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check mt-1 text-green-500"></i>
+                                <div>
+                                    <p class="font-bold">¡Mensaje enviado!</p>
+                                    <p class="text-sm mt-1">Gracias por contactarse. Le responderé a la brevedad.</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-300 py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs">
+                    ND
+                </div>
+                <span class="font-semibold text-white">Nicolás Dómina</span>
+            </div>
+            <p class="text-sm text-center md:text-left text-slate-400">
+                &copy; <span id="year"></span> Administración de Consorcios. Todos los derechos reservados.
+            </p>
+            <div class="flex gap-4">
+                <a href="mailto:contacto@nicolasdomina.com.ar" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors" title="Enviar Email">
+                    <i class="fa-regular fa-envelope"></i>
+                </a>
+                <a href="#inicio" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors" title="Volver arriba">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+<!-- STREAMING_CHUNK:Generando bloque de Javascript integrado... -->
+    <script>
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if(menu.classList.contains('hidden')){
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        });
+
+        // Close mobile menu on link click
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md', 'py-1');
+            } else {
+                navbar.classList.remove('shadow-md', 'py-1');
+            }
+        });
+
+        // Scroll Animation (Intersection Observer)
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Run once
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => {
+            revealOnScroll.observe(el);
+        });
+
+        // Copy Email Function
+        function copyEmail() {
+            const email = "contacto@nicolasdomina.com.ar";
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = email;
+            dummy.select();
+            
+            try {
+                // Fallback to execCommand for iframe compatibility if navigator.clipboard is restricted
+                document.execCommand("copy");
+                const btn = document.getElementById('copyBtn');
+                const originalHtml = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Copiado!';
+                btn.classList.add('bg-green-100', 'text-green-700');
+                btn.classList.remove('text-blue-700');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalHtml;
+                    btn.classList.remove('bg-green-100', 'text-green-700');
+                    btn.classList.add('text-blue-700');
+                }, 2000);
+            } catch (err) {
+                console.error('Error al copiar', err);
+            } finally {
+                document.body.removeChild(dummy);
+            }
+        }
+
+        // Handle Form Submission (Mock UI update)
+        const form = document.getElementById('contactForm');
+        const successMsg = document.getElementById('formSuccess');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Simulate sending data
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Enviando...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                successMsg.classList.remove('hidden');
+                form.reset();
+                
+                // Hide message after a few seconds
+                setTimeout(() => {
+                    successMsg.classList.add('hidden');
+                }, 5000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
